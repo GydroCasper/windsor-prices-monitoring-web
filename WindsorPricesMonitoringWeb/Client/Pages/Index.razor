@@ -1,41 +1,34 @@
 ﻿@page "/"
 @using WindsorPricesMonitoringWeb.Shared
+@using System.Threading.Tasks
 @inject HttpClient Http
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Available units</PageTitle>
 
-@if (units == null)
+@if (oneBedroomUnits is null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Full Number</th>
-                <th>Date Available</th>
-                <th>Minimum Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var unit in units)
-            {
-                <tr>
-                    <td>@unit.FullNumber</td>
-                    <td>@unit.DateAvailable?.ToString("dd.MM.yyyy")</td>
-                    <td>@unit.MinimumPrice</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div>1 Bedroom</div>
+    <UnitsList Units="oneBedroomUnits"/>
+    <div>2 Bedroom</div>
+    <UnitsList Units="twoBedroomUnits"/>
 }
 
 @code {
-    private Unit[]? units;
+    private IEnumerable<Unit> oneBedroomUnits;
+    private IEnumerable<Unit> twoBedroomUnits;
 
     protected override async Task OnInitializedAsync()
     {
-        units = await Http.GetFromJsonAsync<Unit[]>("Unit");
+        var units = await Http.GetFromJsonAsync<Unit[]>("Unit");
+
+        if(units is not null && units.Any())
+        {
+            oneBedroomUnits = units.Where(x => x.BedsCount == 1);
+            twoBedroomUnits = units.Where(x => x.BedsCount == 2);
+        }
     }
 }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindsorPricesMonitoringWeb.Server", "Server\WindsorPricesMonitoringWeb.Server.csproj", "{BD80BFE6-6A90-46A8-A5E0-E92E32962D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindsorPricesMonitoringWeb.Server", "Server\WindsorPricesMonitoringWeb.Server.csproj", "{BD80BFE6-6A90-46A8-A5E0-E92E32962D3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindsorPricesMonitoringWeb.Client", "Client\WindsorPricesMonitoringWeb.Client.csproj", "{91A51F60-81AB-4496-9F48-5094A260F0AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindsorPricesMonitoringWeb.Client", "Client\WindsorPricesMonitoringWeb.Client.csproj", "{91A51F60-81AB-4496-9F48-5094A260F0AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindsorPricesMonitoringWeb.Shared", "Shared\WindsorPricesMonitoringWeb.Shared.csproj", "{B785E01B-57C6-40B5-9903-B27C5D31F319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindsorPricesMonitoringWeb.Shared", "Shared\WindsorPricesMonitoringWeb.Shared.csproj", "{B785E01B-57C6-40B5-9903-B27C5D31F319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

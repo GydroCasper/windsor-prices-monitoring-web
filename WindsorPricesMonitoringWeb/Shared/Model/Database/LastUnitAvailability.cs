@@ -16,4 +16,12 @@ public class LastUnitAvailability
 	public short? MinimumPrice { get; set; }
 
 	public bool IsAvailable { get; set; }
+
+	public byte BedsCount { get; set; }
+
+	public byte BuildingNumber { get; set; }
+
+	public short UnitNumber { get; set; }
+
+	public string ApartmentType { get; set; }
 }

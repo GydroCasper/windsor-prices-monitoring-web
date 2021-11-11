@@ -1,0 +1,29 @@
+﻿@using WindsorPricesMonitoringWeb.Shared
+<table class="table">
+    <thead>
+        <tr>
+            <th>Apartment Type</th>
+            <th>Building</th>
+            <th>Unit</th>
+            <th>Date Available</th>
+            <th>Minimum Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var unit in Units.OrderBy(x => x.ApartmentType).ThenBy(x => x.BuildingNumber))
+        {
+            <tr>
+                <td>@unit.ApartmentType</td>
+                <td>@unit.BuildingNumber</td>
+                <td>@unit.UnitNumber</td>
+                <td>@unit.DateAvailable?.ToString("dd.MM.yyyy")</td>
+                <td>@unit.MinimumPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    [Parameter] public IEnumerable<Unit> Units { get; set; }
+}

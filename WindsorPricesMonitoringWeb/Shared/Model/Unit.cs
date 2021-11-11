@@ -9,5 +9,13 @@
 		public DateTime? DateAvailable { get; set; }
 
 		public int? MinimumPrice { get; set; }
+
+		public byte BuildingNumber { get; set; }
+
+		public short UnitNumber { get; set; }
+
+        public string ApartmentType { get; set; }
+
+		public byte BedsCount { get; set; }
 	}
 }

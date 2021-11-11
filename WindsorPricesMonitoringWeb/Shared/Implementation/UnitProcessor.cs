@@ -1,4 +1,6 @@
-﻿using WindsorPricesMonitoringWeb.Shared.Abstractions;
+﻿using System.Collections.Generic;
+using WindsorPricesMonitoringWeb.Shared;
+using WindsorPricesMonitoringWeb.Shared.Abstractions;
 
 namespace WindsorPricesMonitoringWeb.Shared.Implementation;
 

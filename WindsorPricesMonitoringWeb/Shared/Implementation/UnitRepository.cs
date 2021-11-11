@@ -20,7 +20,11 @@ public class UnitRepository : IUnitRepository
 				FullNumber = x.FullNumber,
 				Date = x.Date,
 				DateAvailable = x.DateAvailable,
-				MinimumPrice = x.MinimumPrice
+				MinimumPrice = x.MinimumPrice,
+				BedsCount = x.BedsCount,
+				BuildingNumber = x.BuildingNumber,
+				UnitNumber = x.UnitNumber,
+				ApartmentType = x.ApartmentType
 			})
 			.OrderBy(x => x.FullNumber);
 	}
