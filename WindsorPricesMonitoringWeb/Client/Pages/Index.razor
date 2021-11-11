@@ -5,30 +5,24 @@
 
 <PageTitle>Available units</PageTitle>
 
-@if (oneBedroomUnits is null)
+@if (units is null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <div>1 Bedroom</div>
-    <UnitsList Units="oneBedroomUnits"/>
-    <div>2 Bedroom</div>
-    <UnitsList Units="twoBedroomUnits"/>
+    foreach(var unitGroups in units.GroupBy(x => x.BedsCount).OrderBy(x => x.Key))
+    {
+        <div>@unitGroups.Key Bedroom</div>
+        <UnitsList Units="unitGroups"/>
+    }
 }
 
 @code {
-    private IEnumerable<Unit> oneBedroomUnits;
-    private IEnumerable<Unit> twoBedroomUnits;
+    private IEnumerable<Unit> units;
 
     protected override async Task OnInitializedAsync()
     {
-        var units = await Http.GetFromJsonAsync<Unit[]>("Unit");
-
-        if(units is not null && units.Any())
-        {
-            oneBedroomUnits = units.Where(x => x.BedsCount == 1);
-            twoBedroomUnits = units.Where(x => x.BedsCount == 2);
-        }
+        units = await Http.GetFromJsonAsync<Unit[]>("Unit");
     }
 }
