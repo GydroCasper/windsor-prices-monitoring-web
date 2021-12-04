@@ -12,7 +12,9 @@ services.AddControllersWithViews();
 services.AddRazorPages();
 
 services.AddScoped<IUnitProcessor, UnitProcessor>();
+services.AddScoped<IApartmentProcessor, ApartmentProcessor>();
 services.AddScoped<IUnitRepository, UnitRepository>();
+services.AddScoped<IApartmentRepository, ApartmentRepository>();
 
 services.AddDbContextFactory<PricesContext>(opt => 
 	opt.UseSqlServer(builder.Configuration.GetValue<string>("ConnectionString")));
